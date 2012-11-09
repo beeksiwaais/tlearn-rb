@@ -305,7 +305,6 @@ main(argc,argv)
 				break;
 			case '?':
 			case 'h':
-			default:
 				usage();
 				exit(2);
 			break;
@@ -481,37 +480,6 @@ main(argc,argv)
 		save_wts();
 	exit(0);
 
-}
-
-usage() {
-  fprintf(stderr, "\n");
-  fprintf(stderr, "-f fileroot:\tspecify fileroot <always required>\n");
-  fprintf(stderr, "-l weightfile:\tload in weightfile\n");
-  fprintf(stderr, "\n");
-  fprintf(stderr, "-s #:\trun for # sweeps <always required>\n");
-  fprintf(stderr, "-r #:\tset learning rate to # (between 0. and 1.) [0.1]\n");
-  fprintf(stderr, "-m #:\tset momentum to # (between 0. and 1.) [0.0]\n");
-  fprintf(stderr, "-n #:\t# of clock ticks per input vector [1]\n");
-  fprintf(stderr, "-t:\tfeedback teacher values in place of outputs\n");
-  fprintf(stderr, "\n");
-  fprintf(stderr, "-S #:\tseed for random number generator [random]\n");
-  fprintf(stderr, "-U #:\tupdate weights every # sweeps [1]\n");
-  fprintf(stderr, "-E #:\trecord rms error in .err file every # sweeps [0]\n");
-  fprintf(stderr, "-C #:\tcheckpoint weights file every # sweeps [0]\n");
-  fprintf(stderr, "-M #:\texit program when rms error is less than # [0.0]\n");
-  fprintf(stderr, "-X:\tuse auxiliary .reset file\n");
-  fprintf(stderr, "-P:\tprobe selected nodes on each sweep (no learning)\n");
-  fprintf(stderr, "-V:\tverify outputs on each sweep (no learning)\n");
-  fprintf(stderr, "-R:\tpresent input patterns in random order\n");
-  fprintf(stderr, "-I:\tignore input values during extra clock ticks\n");
-  fprintf(stderr, "-T:\tignore target values during extra clock ticks\n");
-  fprintf(stderr, "-L:\tuse RTRL temporally recurrent learning\n");
-  fprintf(stderr, "-B #:\toffset for offset biasi initialization\n");
-  fprintf(stderr, "-Dt#:\tdisplay type (0=none;1=activations;2=weights;3=both\n");
-  fprintf(stderr, "-Df#:\tdisplay frequency (#cycles)");
-  fprintf(stderr, "-Dp#:\thardcopy print frequency (#cycles)");
-  fprintf(stderr, "-Dd:\tdelay after each display\n");
-  fprintf(stderr, "\n");
 }
 
 void
