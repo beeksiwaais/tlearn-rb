@@ -2,6 +2,8 @@
 /* make_arrays() - malloc space for arrays */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 #ifdef ibmpc
 extern char  far *malloc();
@@ -99,7 +101,7 @@ make_arrays()
 
 	wt = (float **) malloc(nn * sizeof(float *));
 	if (wt == NULL){
-		printf("wt malloc failed--needed %d bytes for pointers", nn*sizeof(float *));
+		printf("wt malloc failed--needed %zd bytes for pointers", nn*sizeof(float *));
 		exit(1);
 	}
 	for (i = 0; i < nn; i++){

@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 extern	int	nn;	/* number of nodes */
 extern	int	ni;	/* number of inputs */
