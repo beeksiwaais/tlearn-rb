@@ -23,7 +23,7 @@ configuration is defined in a ".cf" file documented in tlearn.man.
 #include <fcntl.h>
 #else
 #ifndef	THINK_C
-#include <strings.h>
+#include <string.h>
 #include <sys/file.h>
 #include <stdlib.h>
 #else	/* THINK_C */
@@ -108,7 +108,7 @@ int	dsp_type = 0;	/* flag for graphics display */
 int	dsp_freq = 0;	/* frequency of graphics display */
 int	dsp_delay = 0;	/* delay of graphics display */
 int	dsp_print = 0;	/* frequency of graphics hardcopy */
-#endif GRAPHICS
+#endif
 
 char	root[128];	/* root filename for .cf, .data, .teach, etc.*/
 char	loadfile[128];	/* filename for weightfile to be read in */
@@ -295,7 +295,7 @@ main(argc,argv)
 						break;
 				}
 				break;
-#endif GRAPHICS
+#endif
 			/*
 			 * if == 1, use cross-entropy as error;
 			 * if == 2, also collect cross-entropy stats.
@@ -360,7 +360,7 @@ main(argc,argv)
 	 */
 	if (dsp_type != 0)
 		init_dsp(root);
-#endif GRAPHICS
+#endif
 	if (!seed)
 		seed = time((time_t *) NULL);
 	srandom(seed);
@@ -450,7 +450,7 @@ main(argc,argv)
 #ifdef GRAPHICS
 		if ((dsp_type != 0) && (sweep%dsp_freq == 0))
 			do_dsp();
-#endif GRAPHICS
+#endif
 		if (verify)
 			print_output(zold);
 
